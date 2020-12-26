@@ -7,7 +7,9 @@ load()
 SIGen
 .Init( SICW )
 .NewGroup( "biology" )
+needlist( "zprototype/biology" , "slime" , "fairy" , "tiny" )
 
-needlist( "zprototype" , "1_resource" , "slime" , "fairy" , "tiny" )
+SIGen.NewGroup( "carbon-coke" )
+needlist( "zprototype/carbon_coke" , "1_resource" )
 
 SIGen.Finish()
