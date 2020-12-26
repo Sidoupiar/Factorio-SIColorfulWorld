@@ -6,8 +6,8 @@ load()
 
 SIGen
 .Init( SICW )
-.NewGroup( "sicw" )
+.NewGroup( "biology" )
 
-needlist( "zprototype" , "slime" , "fairy" , "tiny" )
+needlist( "zprototype" , "1_resource" , "slime" , "fairy" , "tiny" )
 
 SIGen.Finish()
