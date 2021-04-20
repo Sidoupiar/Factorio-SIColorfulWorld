@@ -6,13 +6,13 @@ load()
 
 SIGen
 .Init( SICW )
-.NewGroup( "biology" )
-needlist( "zprototype/biology" , "slime" , "fairy" , "tiny" )
+.NewGroup( "多彩生物" )
+needlist( "zprototype/多彩生物" , "1_史莱姆" , "2_侏儒" , "3_妖精" )
 
-SIGen.NewGroup( "carbon-coke" )
-needlist( "zprototype/carbon_coke" , "1_resource" )
+SIGen.NewGroup( "焦馏工艺" )
+needlist( "zprototype/焦馏工艺" , "1_资源" )
 
-SIGen.NewGroup( "paint" )
-needlist( "zprototype/paint" , "color_block" )
+SIGen.NewGroup( "装饰工坊" )
+needlist( "zprototype/装饰工坊" , "1_像素块" )
 
 SIGen.Finish()
