@@ -12,7 +12,7 @@ needlist( "zprototype/多彩生物" , "1_史莱姆" , "2_侏儒" , "3_妖精" )
 SIGen.NewGroup( "焦馏工艺" )
 needlist( "zprototype/焦馏工艺" , "1_资源" )
 
-SIGen.NewGroup( "装饰工坊" )
-needlist( "zprototype/装饰工坊" , "1_像素块" )
+SIGen.NewGroup( "颜色革命" )
+needlist( "zprototype/颜色革命" , "1_像素块" )
 
 SIGen.Finish()
