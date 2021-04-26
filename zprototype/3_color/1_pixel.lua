@@ -27,7 +27,7 @@ local painterItem = SIGen.NewItem( "像素块调色盘" , 1 )
 -- --------- 创建像素块 ---------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-local pixelPanelSource = SIGen.NewItem( "像素块母板" , 100 ).SetResults( "sicw-simple-像素块-256-256-256" ):GetCurrentEntityName()
+local pixelPanelSource = SIGen.NewItem( "像素块母板" , 100 ).SetResults( "sicw-simple-像素块-256-256-256" ).GetCurrentEntityName()
 for r = 0 , SICW.colorMax , SICW.colorStep do
 	for g = 0 , SICW.colorMax , SICW.colorStep do
 		for b = 0 , SICW.colorMax , SICW.colorStep do
@@ -40,15 +40,15 @@ for r = 0 , SICW.colorMax , SICW.colorStep do
 			.SetMinable( { mining_time = 0.05 , result = pixelPanelSource } , { item = pixelPanelSource , count = 1 } )
 			.SetCorpse( "small-remnants" , "wall-explosion" )
 			.SetMapColor( tint )
+			.SetPic( "pictures" , SIPics.NewLayer( SICW.picturePath.."entity/像素块/像素块" , 32 , 32 ).Priority( SIPics.priority.veryLow ).Tint( tint ).Get() )
+			.SetSound( "mined_sound" , SISounds.Sound( "__base__/sound/deconstruct-bricks.ogg" , 1 ) )
+			.SetSound( "vehicle_impact_sound" , SISounds.Sound( "__base__/sound/car-metal-impact.ogg" , 1 ) )
+			.SetSound( "repair_sound" , SISounds.Sound( "__base__/sound/manual-repair-simple.ogg" , 1 ) )
 			.SetCustomData
 			{
 				icons = { SIPackers.Icon( SICW.picturePath.."item/像素块" , tint , 4 ) } ,
 				collision_box = SIPackers.CollisionBoundBox( 0.1 , 0.1 ) ,
-				render_layer = "object" ,
-				pictures = SIPics.NewLayer( SICW.picturePath.."entity/像素块/像素块" , 32 , 32 ).Priority( SIPics.priority.veryLow ).Tint( tint ).Get() ,
-				mined_sound = SISounds.Sound( "__base__/sound/deconstruct-bricks.ogg" , 1 ) ,
-				vehicle_impact_sound = SISounds.Sound( "__base__/sound/car-metal-impact.ogg" , 1 ) ,
-				repair_sound = SISounds.Sound( "__base__/sound/manual-repair-simple.ogg" , 1 )
+				render_layer = "object"
 			}
 		end
 	end
