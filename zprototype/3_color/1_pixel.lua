@@ -24,10 +24,10 @@ local painterItem = SIGen.NewItem( "像素块调色盘" , 1 )
 .GetCurrentEntityName()
 
 -- ------------------------------------------------------------------------------------------------
--- --------- 创建像素板 ---------------------------------------------------------------------------
+-- --------- 创建像素块 ---------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-local pixelPanelSource = SIGen.NewItem( "像素块母版" , 100 ).SetResults( "sicw-simple-像素块-256-256-256" ):GetCurrentEntityName()
+local pixelPanelSource = SIGen.NewItem( "像素块母板" , 100 ).SetResults( "sicw-simple-像素块-256-256-256" ):GetCurrentEntityName()
 for r = 0 , SICW.colorMax , SICW.colorStep do
 	for g = 0 , SICW.colorMax , SICW.colorStep do
 		for b = 0 , SICW.colorMax , SICW.colorStep do
@@ -37,13 +37,12 @@ for r = 0 , SICW.colorMax , SICW.colorStep do
 			.SetLocalisedNames{ "entity-name.sicw-simple-像素块" , r , g , b }
 			.SetLocalisedDescriptions{ "entity-description.sicw-simple-像素块" , r , g , b }
 			.SetProperties( 1 , 1 , 10 )
+			.SetMinable( { mining_time = 0.05 , result = pixelPanelSource } , { item = pixelPanelSource , count = 1 } )
 			.SetCorpse( "small-remnants" , "wall-explosion" )
 			.SetMapColor( tint )
 			.SetCustomData
 			{
 				icons = { SIPackers.Icon( SICW.picturePath.."item/像素块" , tint , 4 ) } ,
-				minable = { mining_time = 0.1 , result = pixelPanelSource } ,
-				placeable_by = { item = pixelPanelSource , count = 1 } ,
 				collision_box = SIPackers.CollisionBoundBox( 0.1 , 0.1 ) ,
 				render_layer = "object" ,
 				pictures = SIPics.NewLayer( SICW.picturePath.."entity/像素块/像素块" , 32 , 32 ).Priority( SIPics.priority.veryLow ).Tint( tint ).Get() ,
