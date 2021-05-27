@@ -33,8 +33,8 @@ for r = 0 , SICW.colorMax , SICW.colorStep do
 			local tint = SIPackers.Color256( r , g , b )
 			SIGen.NewHealthEntity( SITypes.entity.simpleOwner , "像素块-"..r.."-"..g.."-"..b )
 			.SetFlags{ SIFlags.entityFlags.placeablePlayer , SIFlags.entityFlags.playerCreation }
-			.SetLocalisedNames{ "entity-name.sicw-simple-像素块" , r , g , b }
-			.SetLocalisedDescriptions{ "entity-description.sicw-simple-像素块" , r , g , b }
+			.SetLocalisedNames{ "SI-name.像素块" , r , g , b }
+			.SetLocalisedDescriptions{ "SI-description.像素块" , r , g , b }
 			.SetProperties( 1 , 1 , 10 )
 			.SetMinable( SIPackers.Minable( "像素块母板" , 0.05 ) , SIPackers.PlaceableBy( "像素块母板" ) )
 			.SetCorpse( "small-remnants" , "wall-explosion" )
